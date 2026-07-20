@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warid | Portfolio</title>
+    <!-- Google Fonts: Lexend untuk teks biasa & Archivo Black untuk Heading tegas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lexend:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- NEO-BRUTALISM SYSTEM VARIABLES --- */
+        :root {
+            --bg-main: #f3f3f3;
+            --clr-primary: #ffde4d;   /* Kuning Terang */
+            --clr-secondary: #ff4e88; /* Pink Nyentrik */
+            --clr-accent: #38e54d;    /* Hijau Stabilo */
+            --clr-dark: #000000;
+            --clr-white: #ffffff;
+            --border-thick: 4px solid #000000;
+            --shadow-neo: 8px 8px 0px #000000;
+            --shadow-neo-sm: 4px 4px 0px #000000;
+            --shadow-neo-hover: 2px 2px 0px #000000;
+        }
+
+        /* --- RESET & BASE STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lexend', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--clr-dark);
+            overflow-x: hidden;
+            padding-bottom: 5rem;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Archivo Black', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        /* --- NAVBAR --- */
+        nav {
+            background: var(--clr-secondary);
+            border-bottom: var(--border-thick);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.8rem;
+            background: var(--clr-white);
+            padding: 0.2rem 0.8rem;
+            border: var(--border-thick);
+            box-shadow: var(--shadow-neo-sm);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--clr-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            background: var(--clr-white);
+            padding: 0.5rem 1rem;
+            border: var(--border-thick);
+            box-shadow: var(--shadow-neo-sm);
+            transition: all 0.1s ease;
+        }
+
+        .nav-links a:hover {
+            transform: translate(2px, 2px);
+            box-shadow: var(--shadow-neo-hover);
+        }
+
+        /* --- UTILITIES / CONTAINERS --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .neo-box {
+            background: var(--clr-white);
+            border: var(--border-thick);
+            box-shadow: var(--shadow-neo);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            display: inline-block;
+            background: var(--clr-primary);
+            padding: 0.5rem 1.5rem;
+            border: var(--border-thick);
+            box-shadow: var(--shadow-neo-sm);
+            margin-bottom: 3rem;
+            transform: rotate(-1deg);
+        }
+
+        /* --- HERO SECTION --- */
+        #hero {
+            background: var(--clr-primary);
+            border-bottom: var(--border-thick);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .hero-badge {
+            background: var(--clr-dark);
+            color: var(--clr-white);
+            align-self: flex-start;
+            padding: 0.5rem 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            line-height: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 500;
+            max-width: 600px;
+            background: var(--clr-white);
+            padding: 1rem;
+            border: var(--border-thick);
+            box-shadow: var(--shadow-neo-sm);
+        }
+
+        .neo-btn {
+            display: inline-block;
+            align-self: flex-start;
+            margin-top: 1rem;
+            background: var(--clr-accent);
+            color: var(--clr-dark);
+            text-decoration: none;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+            border: var(--border-thick);
+            box-shadow: var(--shadow-neo);
+            cursor: pointer;
+            transition: all 0.1s ease;
+            text-transform: uppercase;
+        }
+
+        .neo-btn:hover {
+            transform: translate(4px, 4px);
+            box-shadow: var(--shadow-neo-hover);
+            background: var(--clr-white);
+        }
+
+        /* --- TENTANG SAYA --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .about-highlight {
+            background: var(--clr-accent);
+            padding: 2rem;
+            border: var(--border-thick);
+            box-shadow: var(--shadow-neo);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* --- SKILL SECTION --- */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .skill-tag {
+            background: var(--clr-white);
+            border: var(--border-thick);
+            box-shadow: var(--shadow-neo-sm);
+            padding: 0.8rem 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: transform 0.1s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05) rotate(2deg);
+            background: var(--clr-secondary);
+            color: var(--clr-white);
+        }
+
+        /* --- PROYEK / PORTOFOLIO --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: var(--clr-white);
+            border: var(--border-thick);
+            box-shadow: var(--shadow-neo);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: box-shadow 0.1s ease, transform 0.1s ease;
+        }
+
+        .project-img-placeholder {
+            background: var(--clr-dark);
+            color: var(--clr-white);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.5rem;
+            border: var(--border-thick);
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .project-tags span {
+            background: var(--bg-main);
+            border: 2px solid #000;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* --- KONTAK --- */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 600px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .form-control {
+            border: var(--border-thick);
+            padding: 0.8rem;
+            font-size: 1rem;
+            width: 100%;
+            background: var(--bg-main);
+        }
+
+        .form-control:focus {
+            outline: none;
+            background: var(--clr-white);
+        }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-logo"><b>WARID.</b></div>
+        <div class="nav-links">
+            <a href="#about">Tentang</a>
+            <a href="#skills">Skill</a>
+            <a href="#projects">Proyek</a>
+            <a href="#contact">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="container hero-wrapper">
+            <div class="hero-badge">Web Developer & Designer</div>
+            <h1 class="hero-title">HALO, SAYA <span style="background: var(--clr-white); padding: 0 0.5rem; border: var(--border-thick);">WARID</span></h1>
+            <p class="hero-subtitle">Membangun pengalaman digital yang berani, fungsional, dan menolak untuk menjadi membosankan.</p>
+            <a href="#projects" class="neo-btn">Lihat Karya Saya ➔</a>
+        </div>
+    </section>
+
+    <!-- TENTANG SAYA -->
+    <section id="about" class="container">
+        <h2 class="section-title">Tentang Saya</h2>
+        <div class="neo-box about-grid">
+            <div class="about-text">
+                <p style="margin-bottom: 1rem;">Saya adalah seorang kreator digital yang berfokus pada pengembangan front-end dan desain visual. Saya percaya bahwa website tidak harus selalu terlihat kaku dan seragam.</p>
+                <p>Dengan memadukan fungsionalitas kode dan keberanian estetika seperti Neo-Brutalism, saya menciptakan platform digital yang meninggalkan impresi kuat dan tidak terlupakan bagi penggunanya.</p>
+            </div>
+            <div class="about-highlight">
+                <span style="font-size: 2rem; font-family:'Archivo Black';">100%</span>
+                <span>Komitmen pada Performa & Desain Unik</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILL KEAHLIAN -->
+    <section id="skills" class="container">
+        <h2 class="section-title">Keahlian</h2>
+        <div class="skills-container">
+            <div class="skill-tag">HTML5</div>
+            <div class="skill-tag">CSS3 / Tailwind</div>
+            <div class="skill-tag">JavaScript (ES6+)</div>
+            <div class="skill-tag">React.js</div>
+            <div class="skill-tag">UI/UX Design</div>
+            <div class="skill-tag">Branding</div>
+            <div class="skill-tag">Git / GitHub</div>
+        </div>
+    </section>
+
+    <!-- PROYEK PORTOFOLIO -->
+    <section id="projects" class="container">
+        <h2 class="section-title">Proyek Pilihan</h2>
+        <div class="project-grid">
+            
+            <!-- Proyek 1 -->
+            <div class="project-card">
+                <div class="project-img-placeholder" style="background: var(--clr-secondary);">PROYEK 01</div>
+                <div class="project-tags">
+                    <span>HTML</span><span>CSS</span><span>JS</span>
+                </div>
+                <h3>E-Commerce Eksentrik</h3>
+                <p>Sebuah platform toko online modern dengan desain layout asimetris dan navigasi super cepat.</p>
+                <a href="#" class="neo-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem; margin-top: auto;">Detail Proyek</a>
+            </div>
+
+            <!-- Proyek 2 -->
+            <div class="project-card">
+                <div class="project-img-placeholder" style="background: var(--clr-accent); color: #000;">PROYEK 02</div>
+                <div class="project-tags">
+                    <span>React</span><span>Tailwind</span>
+                </div>
+                <h3>Dashboard Analytics</h3>
+                <p>Aplikasi web interaktif untuk memantau data performa server secara real-time dengan grafik kontras.</p>
+                <a href="#" class="neo-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem; margin-top: auto;">Detail Proyek</a>
+            </div>
+
+            <!-- Proyek 3 -->
+            <div class="project-card">
+                <div class="project-img-placeholder" style="background: var(--clr-primary); color: #000;">PROYEK 03</div>
+                <div class="project-tags">
+                    <span>UI/UX</span><span>Figma</span>
+                </div>
+                <h3>Majalah Digital Kreatif</h3>
+                <p>Konsep dan desain frontend untuk portal berita indie yang menekankan tipografi masif.</p>
+                <a href="#" class="neo-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem; margin-top: auto;">Detail Proyek</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="contact" class="container">
+        <h2 class="section-title">Mari Berkolaborasi!</h2>
+        <div class="neo-box">
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Nama Anda</label>
+                    <input type="text" id="name" class="form-control" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Pesan</label>
+                    <textarea id="message" rows="5" class="form-control" required placeholder="Halo Warid, saya tertarik untuk..."></textarea>
+                </div>
+                <button type="submit" class="neo-btn">Kirim Pesan Sekarang ➔</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- JAVASCRIPT INTERACTION -->
+    <script>
+        // Efek Interaksi Hard Shadow Dinamis pada Kartu Proyek
+        const cards = document.querySelectorAll('.project-card');
+        
+        cards.forEach(card => {
+            // Ketika mouse bergerak di atas kartu
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left; // Posisi X kursor di dalam kartu
+                const y = e.clientY - rect.top;  // Posisi Y kursor di dalam kartu
+                
+                // Menghitung arah pergeseran bayangan berdasarkan posisi kursor
+                const moveX = (x - rect.width / 2) / 15;
+                const moveY = (y - rect.height / 2) / 15;
+                
+                // Mengubah shadow secara dinamis mengikuti arah kursor
+                card.style.transform = `translate(${-moveX / 2}px, ${-moveY / 2}px)`;
+                card.style.boxShadow = `${8 + moveX}px ${8 + moveY}px 0px #000000`;
+            });
+            
+            // Mengembalikan ke posisi semula saat mouse keluar dari kartu
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'none';
+                card.style.boxShadow = '8px 8px 0px #000000';
+            });
+        });
+
+        // Handler untuk Simulasi Form Kontak
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(`Halo ${name}! Terima kasih telah mengirim pesan. Fitur ini dapat dihubungkan dengan backend/EmailJS sesuai kebutuhan Anda.`);
+            document.querySelector('.contact-form').reset();
+        }
+    </script>
+</body>
+</html>
